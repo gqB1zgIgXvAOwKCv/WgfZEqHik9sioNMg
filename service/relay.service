@@ -1,0 +1,15 @@
+[Unit]
+Description=Simple Relay
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/root/relay -L relay+ws://:443
+Restart=always
+LimitNOFILE=512000
+LimitNPROC=512000
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target

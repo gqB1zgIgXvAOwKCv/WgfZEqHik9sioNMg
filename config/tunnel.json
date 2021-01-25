@@ -1,0 +1,44 @@
+{
+    "log": {
+		"access": "none",
+		"error": "none",
+		"loglevel": "none"
+	},
+    "inbounds": [
+		{
+			"port": "443",
+			"protocol": "trojan",
+			"settings": {
+			    "clients":[
+					{
+						"password": "RBFaclUVpd2tlVdW",
+						"level": 0
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"security": "none",
+				"wsSettings": {
+					"acceptProxyProtocol": false,
+					"path": "/",
+					"headers": {
+					"Host": "ajax.microsoft.com"
+					}
+				}
+			},
+			"sniffing": {
+				"enabled": false,
+				"destOverride": [
+					"http",
+					"tls"
+				]
+			}
+		}
+    ],
+    "outbounds": [
+		{
+			"protocol": "freedom"
+		}
+	]
+}

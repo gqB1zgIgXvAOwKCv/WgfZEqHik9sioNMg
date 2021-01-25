@@ -1,0 +1,15 @@
+[Unit]
+Description=Shadowsocks R
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python /root/ssr/server.py
+Restart=always
+LimitNOFILE=512000
+LimitNPROC=512000
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target

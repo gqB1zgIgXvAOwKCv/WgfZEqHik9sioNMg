@@ -1,0 +1,11 @@
+[Unit]
+Description=serverstatus
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python /root/needle.py
+Restart=always
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
