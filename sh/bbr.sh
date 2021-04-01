@@ -388,4 +388,4 @@ echo
 echo "Press any key to start...or Press Ctrl+C to cancel"
 char=$(get_char)
 
-install_bbr 2>&1 && rm -f ${cur_dir}/bbr.sh
+install_bbr 2>&1
