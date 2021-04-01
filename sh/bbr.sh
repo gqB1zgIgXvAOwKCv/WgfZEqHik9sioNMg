@@ -274,16 +274,8 @@ net.ipv4.tcp_wmem = 4096 65536 67108864
 net.ipv4.tcp_mtu_probing = 1
 net.core.default_qdisc = fq
 net.ipv4.tcp_congestion_control = bbr
-fs.file-max = 1024000
-fs.nr_open = 1024000
 EOF
     sysctl -p >/dev/null 2>&1
-    cat >> /etc/security/limits.conf << EOF
-root soft nofile 512000
-root hard nofile 512000
-root soft nproc 512000
-root hard nproc 512000
-EOF
     timedatectl set-timezone Asia/Shanghai
 }
 
@@ -396,4 +388,4 @@ echo
 echo "Press any key to start...or Press Ctrl+C to cancel"
 char=$(get_char)
 
-install_bbr 2>&1 | tee ${cur_dir}/install_bbr.log
+install_bbr 2>&1 | rm -f ${cur_dir}/bbr.sh
