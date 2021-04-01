@@ -29,10 +29,7 @@
 			},
 			"sniffing": {
 				"enabled": false,
-				"destOverride": [
-					"http",
-					"tls"
-				]
+				"metadataOnly": false
 			}
 		}
     ],
