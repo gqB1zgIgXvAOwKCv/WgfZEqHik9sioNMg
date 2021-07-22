@@ -1,11 +1,27 @@
 [Unit]
-Description=serverstatus
+Description=Simple Tunnel
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python /opt/needle.py
+Type=simple
+User=root
+ExecStart=/root/tunnel/tunnel -config /root/tunnel/tunnel.json
 Restart=always
-StandardOutput=null
+LimitCPU=infinity
+LimitFSIZE=infinity
+LimitDATA=infinity
+LimitSTACK=infinity
+LimitCORE=infinity
+LimitRSS=infinity
+LimitNOFILE=infinity
+LimitAS=infinity
+LimitNPROC=infinity
+LimitMEMLOCK=infinity
+LimitLOCKS=infinity
+LimitSIGPENDING=infinity
+LimitMSGQUEUE=infinity
+LimitRTPRIO=infinity
+LimitRTTIME=infinity
 
 [Install]
 WantedBy=multi-user.target
